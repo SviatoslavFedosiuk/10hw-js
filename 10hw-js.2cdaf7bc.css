@@ -1,2 +1,79 @@
+body {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 130px;
+  display: flex;
+}
 
+.first {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.text {
+  font-size: 24px;
+}
+
+.div {
+  gap: 30px;
+  padding: 50px;
+  display: flex;
+}
+
+.boxes {
+  cursor: pointer;
+  background-color: #4682b4;
+  width: 100px;
+  height: 100px;
+  transition: all .5s;
+}
+
+.active {
+  background-color: tomato;
+  border-radius: 20px;
+  transform: translateY(-50px) scale(1.5);
+}
+
+.game-container {
+  outline: 7px solid red;
+  flex-wrap: wrap;
+  gap: 0;
+  width: 600px;
+  height: 600px;
+  margin-left: 100px;
+  display: flex;
+}
+
+.game-box {
+  outline: 2px solid #000;
+  width: 200px;
+  height: 200px;
+}
+
+.is-active {
+  background-color: red;
+}
+
+.con {
+  font-size: 24px;
+}
+
+.ipt {
+  border: 1px solid #000;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.button {
+  text-align: center;
+  color: #f0f8ff;
+  background-color: #00f;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 20px;
+}
 /*# sourceMappingURL=10hw-js.2cdaf7bc.css.map */

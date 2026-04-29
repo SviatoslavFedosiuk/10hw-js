@@ -714,6 +714,105 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"a0t4e":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _firstJs = require("./js/first.js");
+var _firstJsDefault = parcelHelpers.interopDefault(_firstJs);
+var _secondJs = require("./js/second.js");
+var _secondJsDefault = parcelHelpers.interopDefault(_secondJs);
+var _thirdJs = require("./js/third.js");
+var _thirdJsDefault = parcelHelpers.interopDefault(_thirdJs);
+var _fourthJs = require("./js/fourth.js");
+var _fourthJsDefault = parcelHelpers.interopDefault(_fourthJs);
+
+},{"./js/first.js":"keKpn","./js/second.js":"hZBYp","./js/third.js":"en3Yl","./js/fourth.js":"7JlqE","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"keKpn":[function(require,module,exports,__globalThis) {
+const textRef = document.querySelector(".text");
+let count = 0;
+let id = null;
+id = setInterval(()=>{
+    count += 1;
+    textRef.textContent = count;
+    if (count > 5) {
+        clearInterval(id);
+        textRef.textContent = `0, interval stoped`;
+    }
+}, 1000);
+
+},{}],"hZBYp":[function(require,module,exports,__globalThis) {
+const boxesRef = document.querySelectorAll(".boxes");
+let index = 0;
+setInterval(()=>{
+    boxesRef.forEach((el)=>el.classList.remove("active"));
+    boxesRef[index].classList.add("active");
+    index++;
+    if (index >= boxesRef.length) index = 0;
+}, 1000);
+
+},{}],"en3Yl":[function(require,module,exports,__globalThis) {
+const count = document.querySelector(".con");
+const gameBoxes = document.querySelectorAll(".game-box");
+let number = 0;
+let activeIndex = 0;
+const intervalId = setInterval(()=>{
+    gameBoxes.forEach((el)=>el.classList.remove("is-active"));
+    activeIndex = Math.floor(Math.random() * gameBoxes.length);
+    gameBoxes[activeIndex].classList.add("is-active");
+}, 1000);
+gameBoxes.forEach((el)=>{
+    el.addEventListener("click", (e)=>{
+        if (e.currentTarget.classList.contains("is-active")) {
+            number += 1;
+            count.textContent = number;
+        }
+    });
+});
+setTimeout(()=>{
+    count.textContent = 0;
+    number = 0;
+    gameBoxes.forEach((el)=>el.classList.remove("is-active"));
+    clearInterval(intervalId);
+    console.log("stop");
+}, 10000);
+
+},{}],"7JlqE":[function(require,module,exports,__globalThis) {
+const input = document.querySelector(".ipt");
+const btn = document.querySelector(".button");
+btn.addEventListener("click", ()=>{
+    let value = input.value * 1000;
+    console.log(value);
+    setTimeout(()=>{
+        alert(`Your value: ${value}`);
+    }, value);
+});
+
+},{}],"jnFvT":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire659e", {})
 
