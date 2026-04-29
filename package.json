@@ -1,11 +1,11 @@
 {
-  "name": "10hw",
+  "name": "10hw-js",
   "version": "1.0.0",
   "description": "",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "dev": "npx parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /10hw/",
+    "build": "parcel build src/index.html --public-url /10hw-js/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
